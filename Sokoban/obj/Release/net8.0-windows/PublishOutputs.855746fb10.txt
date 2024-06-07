@@ -1,0 +1,5 @@
+C:\Users\denis\Desktop\Sokoban.exe
+C:\Users\denis\Desktop\Sokoban.dll
+C:\Users\denis\Desktop\Sokoban.deps.json
+C:\Users\denis\Desktop\Sokoban.runtimeconfig.json
+C:\Users\denis\Desktop\Sokoban.pdb
