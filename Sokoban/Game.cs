@@ -13,7 +13,7 @@ namespace Sokoban
         int height = 0;
         int width = 0;
         string[] tileImages = { };
-        bool moveUp, moveDown, moveLeft, moveRight;
+        bool moveUp, moveDown, moveLeft, moveRight, restart;
         Vector2 up = new Vector2(0, -1);
         Vector2 down = new Vector2(0, 1);
         Vector2 left = new Vector2(-1, 0);
@@ -696,6 +696,18 @@ namespace Sokoban
                 direction = right;
                 MovePlayer();
             }
+            if ((e.KeyCode == Keys.R) && !restart)
+            {
+                restart = true;
+                mainTimer.Stop();
+                foreach (PictureBox pictureBox in pictureBoxes)
+                {
+                    pictureBox.Dispose();
+                }
+                pictureBoxes = new List<PictureBox>();
+                GenerateMap();
+                mainTimer.Start();
+            }
         }
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
@@ -714,6 +726,10 @@ namespace Sokoban
             if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
             {
                 moveRight = false;
+            }
+            if (e.KeyCode == Keys.R)
+            {
+                restart = false;
             }
         }
     }
