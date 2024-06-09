@@ -35,7 +35,7 @@
             // mainTimer
             // 
             mainTimer.Enabled = true;
-            mainTimer.Interval = 20;
+            mainTimer.Interval = 250;
             mainTimer.Tick += mainTimerEvent;
             // 
             // Sokoban
@@ -46,6 +46,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Black;
             ClientSize = new Size(294, 387);
+            DoubleBuffered = true;
             Name = "Sokoban";
             Text = "Sokoban";
             KeyDown += KeyIsDown;
